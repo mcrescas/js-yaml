@@ -822,7 +822,8 @@
   }
 
   function representYamlTimestamp(object /*, style*/) {
-    return object.toISOString();
+    // return object.toISOString();
+    return object.toISOString().split('T')[0];
   }
 
   var timestamp = new type('tag:yaml.org,2002:timestamp', {
@@ -3860,7 +3861,7 @@
   exports.Schema = Schema;
   exports.Type = Type;
   exports.YAMLException = YAMLException;
-  exports.default = jsYaml;
+  exports['default'] = jsYaml;
   exports.dump = dump;
   exports.load = load;
   exports.loadAll = loadAll;

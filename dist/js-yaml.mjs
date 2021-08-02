@@ -816,7 +816,8 @@ function constructYamlTimestamp(data) {
 }
 
 function representYamlTimestamp(object /*, style*/) {
-  return object.toISOString();
+  // return object.toISOString();
+  return object.toISOString().split('T')[0];
 }
 
 var timestamp = new type('tag:yaml.org,2002:timestamp', {
@@ -3847,5 +3848,4 @@ var jsYaml = {
 	safeDump: safeDump
 };
 
-export default jsYaml;
-export { CORE_SCHEMA, DEFAULT_SCHEMA, FAILSAFE_SCHEMA, JSON_SCHEMA, Schema, Type, YAMLException, dump, load, loadAll, safeDump, safeLoad, safeLoadAll, types };
+export { CORE_SCHEMA, DEFAULT_SCHEMA, FAILSAFE_SCHEMA, JSON_SCHEMA, Schema, Type, YAMLException, jsYaml as default, dump, load, loadAll, safeDump, safeLoad, safeLoadAll, types };
